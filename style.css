@@ -1,0 +1,97 @@
+body {
+    height: 100vh;
+    /* body요소의 높이는 웹브라우저의 높이로 지정 */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    /* 배경색 그라데이션*/
+    /* ellipse at bottom : 그라데이션이 중심(ellipse)에서 아래(bottom)쪽이 원형의 중심이되게, #1b2735 0%, #090a0f 100% : 색상 시작위치, 종료위치*/
+    overflow: hidden;
+    /* 넘치는 부분을 가려주기 */
+}
+
+.snow {
+    width: 10px;
+    /* 눈의 크너비 */
+    height: 10px;
+    /* 눈의 높이 */
+    opacity: 0;
+    /* 눈의 기본 투명도: 0(투명하게 시작) */
+    background-color: #fff;
+    /* 눈의 배경색 */
+    border-radius: 50%;
+    /* 테두리를 둥글게 (눈 모양 만들기) */
+    animation: snow 10s linear infinite;
+    /* animation 속성사용 snow: 키프레임 룰 사용 10s: 10초 동안  작동할수있도록 */
+    /* linear : 균일한 속도로 작동하게함, infinite : 무한반복 */
+}
+
+.snow:nth-of-type(2n) {
+    /* snow라는 클래스를 가진 div태그에 nth-of-type 선택자사용 2의 배수에 해당하는 눈을 지정*/
+    width: 7px;
+    /* 2의 배수의 눈 너비 */
+    height: 7px;
+    /* 2의 배수의 눈 높이 */
+    animation-duration: 7s;
+    /* 2의 배수의 눈 애니메이션을 7초로 더빨리 내리게함 */
+    animation-delay: 1s;
+    /* 2의 배수의 눈을 1초 늦게 내리게함 */
+}
+
+.snow:nth-of-type(2n+1) {
+    /* snow라는 클래스를 가진 div태그에 nth-of-type 선택자사용 2+1의 배수에 해당하는 눈을 지정*/
+    animation-duration: 8s;
+    /* 2+1의 배수의 눈 애니메이션을 8초로 더빨리 내리게함 */
+    animation-delay: 2s;
+    /* 2+1의 배수의 눈을 2초 늦게 내리게함 */
+}
+
+.snow:nth-of-type(9n) {
+    /* snow라는 클래스를 가진 div태그에 nth-of-type 선택자사용 9의 배수에 해당하는 눈을 지정*/
+    animation-duration: 9s;
+    /* 9의 배수의 눈 애니메이션을 9초로 더빨리 내리게함 */
+    animation-delay: 3s;
+    /* 9의 배수의 눈을 3초 늦게 내리게함 */
+}
+
+@keyframes snow {
+    0% {
+        opacity: 0;
+        /* 투명도 0 : 완전히 투명 */
+        transform: translateY(0);
+        /* 이동할위치Y값(시작) : 0 (브라우저 크기의 상단에서 시작) */
+    }
+
+    20% {
+        opacity: 1;
+        /* 투명도 1 : 완전히 불투명 */
+        transform: translate(-15px, 20vh);
+        /* 이동할위치(XY값) : -15px, 20vh (X값은 -15px(왼쪽으로), Y값은 20vh(높이에서 실행)) */
+    }
+
+    40% {
+        opacity: 1;
+        /* 투명도 1 : 완전히 불투명 */
+        transform: translate(15px, 40vh);
+        /* 이동할위치(XY값) : 15px, 40vh (X값은 15px(오른쪽으로), Y값은 40vh(높이에서 실행)) */
+    }
+
+    60% {
+        opacity: 1;
+        /* 투명도 1 : 완전히 불투명 */
+        transform: translate(-15px, 60vh);
+        /* 이동할위치(XY값) : -15px, 60vh (X값은 -15px(왼쪽으로), Y값은 60vh(높이에서 실행)) */
+    }
+
+    80% {
+        opacity: 1;
+        /* 투명도 1 : 완전히 불투명 */
+        transform: translate(0px, 80vh);
+        /* 이동할위치(XY값) : 0px, 80vh (X값은 정중앙, Y값은 80vh(높이에서 실행)) */
+    }
+
+    100% {
+        opacity: 1;
+        /* 투명도 1 : 완전히 불투명 */
+        transform: translateY(100vh);
+        /* 이동할위치-Y값(종료) : 0 (브라우저 크기 아래에서 종료) */
+    }
+}
