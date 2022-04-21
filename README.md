@@ -1,4 +1,4 @@
-# House_Design_page
+# Snow_browser
 
 ## HTML과 CSS, javascript로 만든 웹브라우저 배경에 눈이 내리는 페이지입니다.
 
